@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Check Plugin Status
  * Description: Check the status of plugins on your site.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/check-plugin-status/
@@ -155,10 +155,10 @@ function azrcrv_cps_display_options(){
 			$check = array();
 			foreach ($plugins as $key => $plugin){
 				$check[$key] = array(
-											Name => $plugin['Name'],
-											Slug => azrcrv_cps_get_slug($key),
-											PluginURI => $plugin['PluginURI'],
-											Version => $plugin['Version'],
+											'Name' => $plugin['Name'],
+											'Slug' => azrcrv_cps_get_slug($key),
+											'PluginURI' => $plugin['PluginURI'],
+											'Version' => $plugin['Version'],
 										);
 			}
 			
@@ -220,21 +220,23 @@ function azrcrv_cps_display_options(){
 											}
 										}
 										$plugin_response .= '<br />';
-										if ($plugin['Version'] == $api->version){
-											$plugin_response .= __('Version match: ', 'check-plugin-status');
-											$symbol = '=';
-										}else{
-											if ($api->version != ''){
-												$plugin_response .= '<span class="azrcrv-cps-error">'.__('Version mismatch: ', 'check-plugin-status').'</span>';
-												if ($plugin['Version'] < $api->version){
-													$symbol = '<span class="azrcrv-cps-error">&lt;</span>';
-												}else{
-													$symbol = '<span class="azrcrv-cps-error">&gt;</span>';
+										if (isset($api->version)){
+											if ($plugin['Version'] == $api->version){
+												$plugin_response .= __('Version match: ', 'check-plugin-status');
+												$symbol = '=';
+											}else{
+												if ($api->version != ''){
+													$plugin_response .= '<span class="azrcrv-cps-error">'.__('Version mismatch: ', 'check-plugin-status').'</span>';
+													if ($plugin['Version'] < $api->version){
+														$symbol = '<span class="azrcrv-cps-error">&lt;</span>';
+													}else{
+														$symbol = '<span class="azrcrv-cps-error">&gt;</span>';
+													}
 												}
 											}
-										}
-										if ($api->version <> ''){
-											$plugin_response .= $plugin['Version'].' '.$symbol.' '.$api->version;
+											if ($api->version <> ''){
+												$plugin_response .= $plugin['Version'].' '.$symbol.' '.$api->version;
+											}
 										}
 										echo $plugin_response;
 									echo '</td>
