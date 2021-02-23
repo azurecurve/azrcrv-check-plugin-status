@@ -1,0 +1,25 @@
+table.azrcrv-cps{
+    border-collapse: separate;
+    border-spacing: 0;
+}
+th.azrcrv-cps{
+	padding: 12px 4px;
+}
+td.azrcrv-cps{
+	padding: 2px 8px;
+	border-bottom: 1px solid darkgrey;
+}
+td.azrcrv-cps:nth-child(1){
+	width: 300px;
+}
+td.azrcrv-cps:nth-child(2){
+	width: 300px;
+}
+span.azrcrv-cps-error{
+	font-weight: 900;
+	color: red;
+}
+span.azrcrv-cps-missing{
+	color: red;
+	font-style: italic;
+}
