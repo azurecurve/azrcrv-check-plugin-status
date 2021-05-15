@@ -6,7 +6,7 @@ Tags:			admin,plugins,api
 Author:			azurecurve
 Author URI:		https://development.azurecurve.co.uk/
 Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/check-plugin-status/
-Download link:	https://github.com/azurecurve/azrcrv-check-plugin-status/releases/download/v1.1.0/azrcrv-check-plugin-status
+Download link:	https://github.com/azurecurve/azrcrv-check-plugin-status/releases/download/v1.1.0/azrcrv-check-plugin-status.zip
 Requires PHP:	5.6
 Requires:		1.0.0
 Tested:			4.9.99
