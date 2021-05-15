@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Check Plugin Status
  * Description: Check the status of plugins on your site.
- * Version: 1.0.1
+ * Version: 1.1.0
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/check-plugin-status/
@@ -127,8 +127,8 @@ function azrcrv_cps_add_plugin_action_link($links, $file){
 function azrcrv_cps_create_admin_menu(){
 	
 	add_submenu_page("azrcrv-plugin-menu"
-						,__("Check Plugin Status", "check-plugin-status")
-						,__("Check Plugin Status", "check-plugin-status")
+						,esc_html__("Check Plugin Status", "check-plugin-status")
+						,esc_html__("Check Plugin Status", "check-plugin-status")
 						,'manage_options'
 						,'azrcrv-cps'
 						,'azrcrv_cps_display_options');
@@ -143,12 +143,16 @@ function azrcrv_cps_create_admin_menu(){
 function azrcrv_cps_display_options(){
 
 	if (!current_user_can('manage_options')) {
-		wp_die(__('You do not have sufficient permissions to access this page.', 'check-plugin-status'));
+		wp_die(esc_html__('You do not have sufficient permissions to access this page.', 'check-plugin-status'));
 	}
 	
 	echo '<div id="azrcrv-cps-general" class="wrap azrcrv-cps">
 		<fieldset>
-			<h1>'.esc_html(get_admin_page_title()).'</h1>';
+			<h1>
+				<a href="https://development.azurecurve.co.uk/classicpress-plugins/">
+					<img src="'.plugins_url('/pluginmenu/images/logo.svg', __FILE__).'" style="padding-right: 6px; height: 20px; width: 20px;" alt="azurecurve" />
+				</a>'.esc_html(get_admin_page_title()).'
+			</h1>';
 				
 			$plugins = get_plugins();
 			
@@ -167,7 +171,7 @@ function azrcrv_cps_display_options(){
 				
 				<tr>
 					<th scope="row"><label for="widget-width">
-						'.__('WordPress Plugins', 'check-plugin-status').'
+						'.esc_html__('WordPress Plugins', 'check-plugin-status').'
 					</th>
 					<td>';
 						if (!function_exists('plugins_api')){
@@ -208,25 +212,25 @@ function azrcrv_cps_display_options(){
 										
 										$plugin_response = '';
 										if(!isset($api->version)){
-											$plugin_response .= '<span class="azrcrv-cps-missing">'.__('Plugin status could not be determined.', 'check-plugin-status').'</span>';
+											$plugin_response .= '<span class="azrcrv-cps-missing">'.esc_html__('Plugin status could not be determined.', 'check-plugin-status').'</span>';
 										}else{
 											if (isset($api->external)){
-												$plugin_response .= '<span class="azrcrv-cps">'.__('Plugin has a 3rd party update mechanism.', 'check-plugin-status').'</span>';
+												$plugin_response .= '<span class="azrcrv-cps">'.esc_html__('Plugin has a 3rd party update mechanism.', 'check-plugin-status').'</span>';
 											}else{
-												$plugin_response .= '<span class="azrcrv-cps">'.__('Plugin is in the WordPress Repository', 'check-plugin-status').'</span>';
+												$plugin_response .= '<span class="azrcrv-cps">'.esc_html__('Plugin is in the WordPress Repository', 'check-plugin-status').'</span>';
 											}
 											if ($api->requires > 4.9){
-												$plugin_response .= '<br /><span class="azrcrv-cps-error">'.__('Not supported on ClassicPress', 'check-plugin-status').'</span>';
+												$plugin_response .= '<br /><span class="azrcrv-cps-error">'.esc_html__('Not supported on ClassicPress', 'check-plugin-status').'</span>';
 											}
 										}
 										$plugin_response .= '<br />';
 										if (isset($api->version)){
 											if ($plugin['Version'] == $api->version){
-												$plugin_response .= __('Version match: ', 'check-plugin-status');
+												$plugin_response .= esc_html__('Version match: ', 'check-plugin-status');
 												$symbol = '=';
 											}else{
 												if ($api->version != ''){
-													$plugin_response .= '<span class="azrcrv-cps-error">'.__('Version mismatch: ', 'check-plugin-status').'</span>';
+													$plugin_response .= '<span class="azrcrv-cps-error">'.esc_html__('Version mismatch: ', 'check-plugin-status').'</span>';
 													if ($plugin['Version'] < $api->version){
 														$symbol = '<span class="azrcrv-cps-error">&lt;</span>';
 													}else{
