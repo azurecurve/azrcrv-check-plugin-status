@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Check Plugin Status
  * Description: Check the status of plugins on your site.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/check-plugin-status/
