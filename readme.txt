@@ -1,13 +1,14 @@
 === Check Plugin Status ===
 
 Description:	Check the status of plugins on your site.
-Version:		1.1.2
+Version:		1.1.3
 Tags:			admin,plugins,api 
 Author:			azurecurve
 Author URI:		https://development.azurecurve.co.uk/
 Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/check-plugin-status/
-Download link:	https://github.com/azurecurve/azrcrv-check-plugin-status/releases/download/v1.1.2/azrcrv-check-plugin-status.zip
+Download link:	https://github.com/azurecurve/azrcrv-check-plugin-status/releases/download/v1.1.3/azrcrv-check-plugin-status.zip
 Requires PHP:	5.6
+Requires CP:	1.0
 Requires:		1.0.0
 Tested:			4.9.99
 Text Domain:	check-plugin-status
@@ -52,6 +53,9 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 
 # Changelog
 
+### [Version 1.1.3](https://github.com/azurecurve/azrcrv-check-plugin-status/releases/tag/v1.1.3)
+ * Update readme file for compatibility with ClassicPress Directory.
+ 
 ### [Version 1.1.2](https://github.com/azurecurve/azrcrv-check-plugin-status/releases/tag/v1.1.2)
  * Update readme files.
  * Update language template.
