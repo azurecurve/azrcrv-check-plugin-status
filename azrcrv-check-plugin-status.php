@@ -1,14 +1,18 @@
 <?php
 /** 
  * ------------------------------------------------------------------------------
- * Plugin Name: Check Plugin Status
- * Description: Check the status of plugins on your site.
- * Version: 1.1.3
- * Author: azurecurve
- * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
- * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/check-plugin-status/
- * Text Domain: check-plugin-status
- * Domain Path: /languages
+ * Plugin Name:		Check Plugin Status
+ * Description:		Check the status of plugins on your site.
+ * Version:			1.1.4
+ * Requires CP:		1.0
+ * Author:			azurecurve
+ * Author URI:		https://development.azurecurve.co.uk/classicpress-plugins/
+ * Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/check-plugin-status/
+ * Donate link:		https://development.azurecurve.co.uk/support-development/
+ * Text Domain:		check-plugin-status
+ * Domain Path:		/languages
+ * License:			GPLv2 or later
+ * License URI:		http://www.gnu.org/licenses/gpl-2.0.html
  * ------------------------------------------------------------------------------
  * This is free sottware released under the terms of the General Public License,
  * version 2, or later. It is distributed WITHOUT ANY WARRANTY; without even the
